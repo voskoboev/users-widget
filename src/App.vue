@@ -1,0 +1,67 @@
+<template>
+  <div id="app">
+    <TheLayout />
+  </div>
+</template>
+
+<script>
+import TheLayout from "./components/TheLayout.vue";
+
+export default {
+  name: "App",
+
+  components: {
+    TheLayout,
+  },
+};
+</script>
+
+<style>
+:root {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  --color-accent: #1818cd;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+a {
+  display: block;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+</style>
