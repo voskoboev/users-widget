@@ -115,10 +115,10 @@ export const store = new Vuex.Store({
     },
 
     loadUsersFromLocalStorage: ({ commit }) => {
-      localStorageForUsers.loadItems({
+      localStorageForUsers.loadItems(
         commit,
-        mutationName: SET_USER_AFTER_LOADING_FROM_LOCALSTORAGE,
-      });
+        SET_USER_AFTER_LOADING_FROM_LOCALSTORAGE
+      );
     },
   },
 });

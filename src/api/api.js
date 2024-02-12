@@ -1,7 +1,5 @@
 class LocalStorageService {
-  itemName;
-
-  constructor({ itemName }) {
+  constructor(itemName) {
     this.itemName = itemName;
   }
 
@@ -11,7 +9,7 @@ class LocalStorageService {
     localStorage.setItem(this.itemName, stringifiedUsers);
   };
 
-  loadItems = ({ commit, mutationName }) => {
+  loadItems = (commit, mutationName) => {
     const loadedItems = localStorage.getItem(this.itemName);
 
     if (!loadedItems) {
@@ -23,6 +21,4 @@ class LocalStorageService {
   };
 }
 
-export const localStorageForUsers = new LocalStorageService({
-  itemName: "platrumUsers",
-});
+export const localStorageForUsers = new LocalStorageService("platrumUsers");
