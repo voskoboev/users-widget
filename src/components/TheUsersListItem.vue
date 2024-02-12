@@ -61,6 +61,7 @@ export default {
 
 .list-item__info--phone-number {
   min-width: 150px;
+  height: auto;
 }
 
 .list-item__info--name {

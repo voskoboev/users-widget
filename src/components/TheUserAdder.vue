@@ -22,6 +22,7 @@
             type="tel"
             required
             pattern="^[0-9]*$"
+            maxlength="15"
             v-model.number="phoneNumber"
           />
         </label>

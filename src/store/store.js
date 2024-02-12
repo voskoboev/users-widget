@@ -14,6 +14,7 @@ import {
   getFlattenedUsers,
   getSortedUsersByPhoneNumberDeeply,
   getSortedUsersByNameDeeply,
+  sortUsers,
 } from "./helpers";
 
 Vue.use(Vuex);
@@ -89,23 +90,15 @@ export const store = new Vuex.Store({
     },
 
     [SORT_USERS_BY_PHONE_NUMBER]: (state) => {
-      if (state.userPhoneNumberSortingMode === "asc") {
-        state.users = getSortedUsersByPhoneNumberDeeply(state.users, "asc");
-        state.userPhoneNumberSortingMode = "desc";
-      } else {
-        state.users = getSortedUsersByPhoneNumberDeeply(state.users, "desc");
-        state.userPhoneNumberSortingMode = "asc";
-      }
+      sortUsers(
+        state,
+        "userPhoneNumberSortingMode",
+        getSortedUsersByPhoneNumberDeeply
+      );
     },
 
     [SORT_USERS_BY_NAME]: (state) => {
-      if (state.userNameSortingMode === "asc") {
-        state.users = getSortedUsersByNameDeeply(state.users, "asc");
-        state.userNameSortingMode = "desc";
-      } else {
-        state.users = getSortedUsersByNameDeeply(state.users, "desc");
-        state.userNameSortingMode = "asc";
-      }
+      sortUsers(state, "userNameSortingMode", getSortedUsersByNameDeeply);
     },
   },
 

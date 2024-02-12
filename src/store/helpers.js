@@ -64,3 +64,14 @@ export const getSortedUsersByNameDeeply = (users, mode) => {
     return user;
   });
 };
+
+export const sortUsers = (state, mode, sortFunction) => {
+  if (state[mode] === "asc") {
+    state.users = sortFunction(state.users, "asc");
+    state[mode] = "desc";
+    return;
+  }
+
+  state.users = sortFunction(state.users, "desc");
+  state[mode] = "asc";
+};
