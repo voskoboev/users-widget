@@ -28,7 +28,7 @@ export default {
 
   created() {
     this.$store.dispatch("loadUsersFromLocalStorage");
-    // window.addEventListener("beforeunload", this.saveUsersToLocalStorage);
+    window.addEventListener("beforeunload", this.saveUsersToLocalStorage);
   },
 
   beforeDestroy() {
