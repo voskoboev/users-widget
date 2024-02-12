@@ -4,7 +4,7 @@ export const addUserDeeply = (users, directorId, newUser) => {
     return;
   }
 
-  for (let user of users) {
+  users.forEach((user) => {
     if (user.id === directorId) {
       user.subs.push(newUser);
     }
@@ -12,19 +12,19 @@ export const addUserDeeply = (users, directorId, newUser) => {
     if (user.subs.length > 0) {
       addUserDeeply(user.subs, directorId, newUser);
     }
-  }
+  });
 };
 
 export const getFlattenedUsers = (users) => {
   const flattenedUsers = [];
 
-  for (let user of users) {
+  users.forEach((user) => {
     flattenedUsers.push(user);
 
     if (user.subs.length > 0) {
       flattenedUsers.push(...getFlattenedUsers(user.subs));
     }
-  }
+  });
 
   return flattenedUsers;
 };
