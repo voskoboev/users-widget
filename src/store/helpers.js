@@ -29,7 +29,7 @@ export const getFlattenedUsers = (users) => {
   return flattenedUsers;
 };
 
-export const sortUsersByPhoneNumberDeeply = (users, mode) => {
+export const getSortedUsersByPhoneNumberDeeply = (users, mode) => {
   if (mode === "asc") {
     users.sort((a, b) => a.phoneNumber - b.phoneNumber);
   }
@@ -40,14 +40,14 @@ export const sortUsersByPhoneNumberDeeply = (users, mode) => {
 
   return users.map((user) => {
     if (user.subs.length > 0) {
-      user.subs = sortUsersByPhoneNumberDeeply(user.subs, mode);
+      user.subs = getSortedUsersByPhoneNumberDeeply(user.subs, mode);
     }
 
     return user;
   });
 };
 
-export const sortUsersByNameDeeply = (users, mode) => {
+export const getSortedUsersByNameDeeply = (users, mode) => {
   if (mode === "asc") {
     users.sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -58,7 +58,7 @@ export const sortUsersByNameDeeply = (users, mode) => {
 
   return users.map((user) => {
     if (user.subs.length > 0) {
-      user.subs = sortUsersByNameDeeply(user.subs, mode);
+      user.subs = getSortedUsersByNameDeeply(user.subs, mode);
     }
 
     return user;
