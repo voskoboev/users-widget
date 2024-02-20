@@ -7,10 +7,10 @@ export default {
   name: "AppInput",
 
   props: ["value"],
-  
+
   methods: {
-    handleInput(event) {
-      this.$emit("input", event.target.value);
+    handleInput(ev) {
+      this.$emit("input", ev.target.value);
     },
   },
 };

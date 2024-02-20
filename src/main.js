@@ -1,3 +1,6 @@
+import "../src/assets/reset.css";
+import "../src/assets/main.css";
+
 import Vue from "vue";
 import App from "./App";
 import AppButton from "../src/components/UI/AppButton.vue";
