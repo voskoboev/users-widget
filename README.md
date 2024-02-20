@@ -1,21 +1,22 @@
-# vue-test
 
-> A Vue.js project
+# Виджет формы для добавления пользователей в список
 
-## Build Setup
+### Технологии:
 
-``` bash
-# install dependencies
-npm install
+HTML5, CSS3, JS, Vue 2, Vuex
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Условия:
+- Использовать flexbox для упрощения верстки.
+- Запрещено использовать готовые UI-kit'ы.
+- Интерфейс должен быть понятным.
+- Создать таблицу и кнопку, которая вызывает модальное окно с формой.
+- Сохранять данные из формы в таблицу. При закрытии вкладки сохранять данные в LocalStorage.
+- Добавить в форму select с выбором пользователя (любого из уже сохраненных).
+- Добавить в талицу подержку вложенных уровней. Глубина вложенности должна быть неограниченной. Родительским элементом пользователя может быть любой уже добавленный пользователь.
+- Добавить сортировку пользователей по клику на заголовок колонки, сортировка должна также работать по подуровням.
 
-# build for production with minification
-npm run build
+### Команды для запуска:
+- npm install
+- npm run dev
+- npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

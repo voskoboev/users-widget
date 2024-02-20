@@ -25,7 +25,7 @@ import {
 import TheUsersList from "../components/TheUsersList.vue";
 
 export default {
-  name: "Users",
+  name: "TheUsers",
 
   components: {
     TheUsersList,
